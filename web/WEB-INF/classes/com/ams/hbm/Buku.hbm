@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.ams.model">
+<class
+name="Buku"
+table="buku"
+batch-size="100"
+>
+
+<meta attribute="sync-DAO">true</meta>
+
+<id
+name="Id"
+type="long"
+column="id_buku"
+>
+<generator class="sequence">
+<param name="sequence">buku_seq</param>
+</generator>
+</id>
+
+<property
+name="KodeBuku"
+column="kode_buku"
+type="string"
+/>
+
+<property
+name="NamaBuku"
+column="nama_buku"
+type="string"
+not-null="false"
+/>
+
+<property
+name="Kategori"
+column="nama_kategori"
+type="string"
+not-null="false"
+/>
+
+<property 
+name="TglGabung"
+column="tgl_gabung"
+type="date"
+not-null="false"
+/>
+
+</class>
+</hibernate-mapping>
